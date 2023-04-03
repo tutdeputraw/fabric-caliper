@@ -1,0 +1,14 @@
+---
+test:
+  workers:
+    type: local
+    number: 1
+  rounds:
+    - label: Create Real Estate
+      txNumber: 1000
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: chaincodes/real_estate/functions/createRealEstate.js

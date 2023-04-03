@@ -128,18 +128,13 @@
                 <li>DLT: &nbsp<span style="font-weight: 500;">fabric</span></li>
                 <li>Name: &nbsp<span style="font-weight: 500;"></span></li>
                 <li>Description: &nbsp<span style="font-weight: 500;"></span></li>
-                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">6</span></li>
+                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">1</span></li>
                 <li><a href="#benchmarkInfo">Details</a></li>
             </ul>
             <ul>
                 <h3>&nbspBenchmark results</h3>
                 <li><a href="#benchmarksummary">Summary</a></li>
-                    <li><a href="#Create a Car. [fixed-load]">Create a Car. [fixed-load]</a></li>
-                    <li><a href="#Create Car [fixed-rate]">Create Car [fixed-rate]</a></li>
-                    <li><a href="#Query a Car. [fixed-load]">Query a Car. [fixed-load]</a></li>
-                    <li><a href="#Query Car [fixed-rate]">Query Car [fixed-rate]</a></li>
-                    <li><a href="#Query_Car_1 [fixed-load]">Query_Car_1 [fixed-load]</a></li>
-                    <li><a href="#Create_Car_1 [fixed-load]">Create_Car_1 [fixed-load]</a></li>
+                    <li><a href="#Create Real Estate">Create Real Estate</a></li>
             </ul>
             <ul>
                 <h3>&nbspSystem under test</h3>
@@ -162,147 +157,28 @@
                     </tr>
 
                     <tr>
-                         <td>Create a Car. [fixed-load]</td> <td>45</td> <td>1</td> <td>1.5</td> <td>4.88</td> <td>1.34</td> <td>3.20</td> <td>1.4</td>
-                    </tr>
-                    <tr>
-                         <td>Create Car [fixed-rate]</td> <td>997</td> <td>3</td> <td>39.1</td> <td>60.65</td> <td>1.52</td> <td>38.38</td> <td>13.3</td>
-                    </tr>
-                    <tr>
-                         <td>Query a Car. [fixed-load]</td> <td>1459</td> <td>0</td> <td>48.9</td> <td>0.30</td> <td>0.02</td> <td>0.07</td> <td>48.9</td>
-                    </tr>
-                    <tr>
-                         <td>Query Car [fixed-rate]</td> <td>2000</td> <td>0</td> <td>218.5</td> <td>20.17</td> <td>8.68</td> <td>14.73</td> <td>93.9</td>
-                    </tr>
-                    <tr>
-                         <td>Query_Car_1 [fixed-load]</td> <td>1787</td> <td>0</td> <td>59.9</td> <td>0.17</td> <td>0.01</td> <td>0.06</td> <td>59.8</td>
-                    </tr>
-                    <tr>
-                         <td>Create_Car_1 [fixed-load]</td> <td>46</td> <td>0</td> <td>1.4</td> <td>2.68</td> <td>0.59</td> <td>2.19</td> <td>1.3</td>
+                         <td>Create Real Estate</td> <td>984</td> <td>16</td> <td>47.6</td> <td>52.48</td> <td>5.36</td> <td>24.19</td> <td>16.4</td>
                     </tr>
                 </table>
             </div>
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create a Car. [fixed-load]">
-                <h2>Benchmark round: Create a Car. [fixed-load]</h2>
-                <p></p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 30
-rateControl:
-  type: fixed-load
-  opts:
-    transactionLoad: 5
-</pre>
-                        <h3>Performance metrics for Create a Car. [fixed-load]</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>Create a Car. [fixed-load]</td> <td>45</td> <td>1</td> <td>1.5</td> <td>4.88</td> <td>1.34</td> <td>3.20</td> <td>1.4</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for Create a Car. [fixed-load]</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create Car [fixed-rate]">
-                <h2>Benchmark round: Create Car [fixed-rate]</h2>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create Real Estate">
+                <h2>Benchmark round: Create Real Estate</h2>
                 <p></p>
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
   type: fixed-rate
   opts:
-    tps: 40
+    tps: 50
 </pre>
-                        <h3>Performance metrics for Create Car [fixed-rate]</h3>
+                        <h3>Performance metrics for Create Real Estate</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>Create Car [fixed-rate]</td> <td>997</td> <td>3</td> <td>39.1</td> <td>60.65</td> <td>1.52</td> <td>38.38</td> <td>13.3</td>
+                                     <td>Create Real Estate</td> <td>984</td> <td>16</td> <td>47.6</td> <td>52.48</td> <td>5.36</td> <td>24.19</td> <td>16.4</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for Create Car [fixed-rate]</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Query a Car. [fixed-load]">
-                <h2>Benchmark round: Query a Car. [fixed-load]</h2>
-                <p></p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 30
-rateControl:
-  type: fixed-load
-  opts:
-    transactionLoad: 5
-</pre>
-                        <h3>Performance metrics for Query a Car. [fixed-load]</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>Query a Car. [fixed-load]</td> <td>1459</td> <td>0</td> <td>48.9</td> <td>0.30</td> <td>0.02</td> <td>0.07</td> <td>48.9</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for Query a Car. [fixed-load]</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Query Car [fixed-rate]">
-                <h2>Benchmark round: Query Car [fixed-rate]</h2>
-                <p>Test description for the query performance of the deployed contract.</p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
-  type: fixed-rate
-  opts:
-    tps: 220
-</pre>
-                        <h3>Performance metrics for Query Car [fixed-rate]</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>Query Car [fixed-rate]</td> <td>2000</td> <td>0</td> <td>218.5</td> <td>20.17</td> <td>8.68</td> <td>14.73</td> <td>93.9</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for Query Car [fixed-rate]</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Query_Car_1 [fixed-load]">
-                <h2>Benchmark round: Query_Car_1 [fixed-load]</h2>
-                <p></p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 30
-rateControl:
-  type: fixed-load
-  opts:
-    transactionLoad: 5
-</pre>
-                        <h3>Performance metrics for Query_Car_1 [fixed-load]</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>Query_Car_1 [fixed-load]</td> <td>1787</td> <td>0</td> <td>59.9</td> <td>0.17</td> <td>0.01</td> <td>0.06</td> <td>59.8</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for Query_Car_1 [fixed-load]</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create_Car_1 [fixed-load]">
-                <h2>Benchmark round: Create_Car_1 [fixed-load]</h2>
-                <p></p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 30
-rateControl:
-  type: fixed-load
-  opts:
-    transactionLoad: 5
-</pre>
-                        <h3>Performance metrics for Create_Car_1 [fixed-load]</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>Create_Car_1 [fixed-load]</td> <td>46</td> <td>0</td> <td>1.4</td> <td>2.68</td> <td>0.59</td> <td>2.19</td> <td>1.3</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for Create_Car_1 [fixed-load]</h3>
+                        <h3>Resource utilization for Create Real Estate</h3>
             </div>
 
             <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;">
@@ -312,59 +188,14 @@ rateControl:
   type: local
   number: 1
 rounds:
-  - label: &#39;Create a Car. [fixed-load]&#39;
-    txDuration: 30
-    rateControl:
-      type: fixed-load
-      opts:
-        transactionLoad: 5
-    workload:
-      module: fabcar&#x2F;functions&#x2F;createCar.js
-  - label: &#39;Create Car [fixed-rate]&#39;
+  - label: Create Real Estate
     txNumber: 1000
     rateControl:
       type: fixed-rate
       opts:
-        tps: 40
+        tps: 50
     workload:
-      module: fabcar&#x2F;functions&#x2F;createCar.js
-  - label: &#39;Query a Car. [fixed-load]&#39;
-    txDuration: 30
-    rateControl:
-      type: fixed-load
-      opts:
-        transactionLoad: 5
-    workload:
-      module: fabcar&#x2F;functions&#x2F;queryCar.js
-      arguments:
-        assets: 1000
-  - label: &#39;Query Car [fixed-rate]&#39;
-    description: Test description for the query performance of the deployed contract.
-    txNumber: 2000
-    rateControl:
-      type: fixed-rate
-      opts:
-        tps: 220
-    workload:
-      module: fabcar&#x2F;functions&#x2F;queryCar.js
-  - label: &#39;Query_Car_1 [fixed-load]&#39;
-    txDuration: 30
-    rateControl:
-      type: fixed-load
-      opts:
-        transactionLoad: 5
-    workload:
-      module: fabcar&#x2F;functions&#x2F;queryCar.js
-      arguments:
-        assets: 1000
-  - label: &#39;Create_Car_1 [fixed-load]&#39;
-    txDuration: 30
-    rateControl:
-      type: fixed-load
-      opts:
-        transactionLoad: 5
-    workload:
-      module: fabcar&#x2F;functions&#x2F;createCar.js
+      module: chaincodes&#x2F;real_estate&#x2F;functions&#x2F;createRealEstate.js
 </pre>
                 <h3>SUT</h3>
                 <pre id="sutdetails">not provided</pre>

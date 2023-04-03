@@ -1,0 +1,209 @@
+name: Fabric
+version: "1.0"
+mutual-tls: false
+
+caliper:
+  blockchain: fabric
+  # command:
+  #   start: export FABRIC_VERSION=1.4.4;export FABRIC_CA_VERSION=1.4.4;docker-compose -f networks/fabric/docker-compose/2org1peercouchdb_solo_raft/docker-compose-tls.yaml up -d;sleep 10s
+  #   end: docker-compose -f networks/fabric/docker-compose/2org1peercouchdb_solo_raft/docker-compose-tls.yaml down;(test -z \"$(docker ps -aq)\") || docker rm $(docker ps -aq);(test -z \"$(docker images dev* -q)\") || docker rmi $(docker images dev* -q);rm -rf /tmp/hfc-*
+
+info:
+  Version: 2.1.0
+  Size: 2 Orgs with 1 Peer
+  Orderer: Raft
+  Distribution: Single Host
+  StateDB: CouchDB
+
+clients:
+  # client0.org1.example.com:
+  #   client:
+  #     organization: Org1
+  #     credentialStore:
+  #       path: /tmp/hfc-kvs/org1
+  #       cryptoStore:
+  #         path: /tmp/hfc-cvs/org1
+  #     clientPrivateKey:
+  #       path: organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/e7a474185e953e6c4f36ca2d945f763198e66e145687cd7288b5f0834cbb9fd2_sk
+  #     clientSignedCert:
+  #       path: organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/cert.pem
+
+  # client0.org2.example.com:
+  #   client:
+  #     organization: Org2
+  #     credentialStore:
+  #       path: /tmp/hfc-kvs/org2
+  #       cryptoStore:
+  #         path: /tmp/hfc-cvs/org2
+  #     clientPrivateKey:
+  #       path: organizations/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/keystore/e56ccf919de09918a8462efd9797a26c2840dd0d5c1ea62060e938e9bcaa319d_sk
+  #     clientSignedCert:
+  #       path: organizations/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/signcerts/cert.pem
+  
+  client0.org3.example.com:
+    client:
+      organization: Org3
+      credentialStore:
+        path: /tmp/hfc-kvs/org3
+        cryptoStore:
+          path: /tmp/hfc-cvs/org3
+      clientPrivateKey:
+        path: organizations/peerOrganizations/org3.example.com/users/User1@org3.example.com/msp/keystore/6bf11df300fe3c7581a82cb428e30a03c18a9077b6ebb2188736517d97f5c5fd_sk
+      clientSignedCert:
+        path: organizations/peerOrganizations/org3.example.com/users/User1@org3.example.com/msp/signcerts/cert.pem
+
+channels:
+  mychannel:
+    # configBinary: networks/fabric/pavan-v2.1/mychannel.tx
+    created: true
+    contracts: [{ "id": "real_estate", "version": "2" }, { "id": "fabcar", "version": "1" },]
+    definition:
+      capabilities: []
+      consortium: "SampleConsortium"
+      msps: ["Org1MSP", "Org2MSP", "Org3MSP"]
+      version: 0
+    orderers:
+      - orderer.example.com
+      - orderer2.example.com
+      - orderer3.example.com
+    peers:
+      peer0.org1.example.com:
+        eventSource: true
+      peer0.org2.example.com:
+        eventSource: true
+      peer0.org3.example.com:
+        eventSource: true
+
+organizations:
+  Org1:
+    mspid: Org1MSP
+    peers:
+      - peer0.org1.example.com
+      - peer1.org1.example.com
+    certificateAuthorities:
+      - ca.org1.example.com
+    adminPrivateKey:
+      path: organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/5d88b82dbb0622aa00997b50eba2191c7d2306e513eb269771284b1c953665c5_sk
+    signedCert:
+      path: organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/cert.pem
+
+  Org2:
+    mspid: Org2MSP
+    peers:
+      - peer0.org2.example.com
+      - peer1.org2.example.com
+    certificateAuthorities:
+      - ca.org2.example.com
+    adminPrivateKey:
+      path: organizations/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore/377e7e1eac0196aec5ed6291afffd849bc8ecb424de46b4cceddff9bf3b36f8e_sk
+    signedCert:
+      path: organizations/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts/cert.pem
+  
+  Org3:
+    mspid: Org3MSP
+    peers:
+      - peer0.org3.example.com
+      - peer1.org3.example.com
+    certificateAuthorities:
+      - ca.org3.example.com
+    adminPrivateKey:
+      path: organizations/peerOrganizations/org3.example.com/users/Admin@org3.example.com/msp/keystore/2ae0ca92329193b999c88ff4e9efd64121155866841de13044839ab6e52b0419_sk
+    signedCert:
+      path: organizations/peerOrganizations/org3.example.com/users/Admin@org3.example.com/msp/signcerts/cert.pem
+
+orderers:
+  orderer.example.com:
+    url: grpcs://34.145.91.212:7050
+    grpcOptions:
+      ssl-target-name-override: orderer.example.com
+    tlsCACerts:
+      path: organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+  orderer2.example.com:
+    url: grpcs://34.145.91.212:8050
+    grpcOptions:
+      ssl-target-name-override: orderer2.example.com
+    tlsCACerts:
+      path: organizations/ordererOrganizations/example.com/orderers/orderer2.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+  orderer3.example.com:
+    url: grpcs://34.145.91.212:9050
+    grpcOptions:
+      ssl-target-name-override: orderer3.example.com
+    tlsCACerts:
+      path: organizations/ordererOrganizations/example.com/orderers/orderer3.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+
+peers:
+  peer0.org1.example.com:
+    url: grpcs://34.125.215.202:7051
+    grpcOptions:
+      ssl-target-name-override: peer0.org1.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+  peer1.org1.example.com:
+    url: grpcs://34.125.215.202:8051
+    grpcOptions:
+      ssl-target-name-override: peer1.org1.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: organizations/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/ca.crt
+
+  peer0.org2.example.com:
+    url: grpcs://34.78.248.112:9051
+    grpcOptions:
+      ssl-target-name-override: peer0.org2.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
+  peer1.org2.example.com:
+    url: grpcs://34.78.248.112:10051
+    grpcOptions:
+      ssl-target-name-override: peer1.org2.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
+  
+  peer0.org3.example.com:
+    url: grpcs://34.88.30.96:11051
+    grpcOptions:
+      ssl-target-name-override: peer0.org3.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: organizations/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls/ca.crt
+  peer1.org3.example.com:
+    url: grpcs://34.88.30.96:12051
+    grpcOptions:
+      ssl-target-name-override: peer1.org3.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path:  organizations/peerOrganizations/org3.example.com/peers/peer1.org3.example.com/tls/ca.crt
+
+certificateAuthorities:
+  ca.org1.example.com:
+    url: https://34.125.215.202:7054
+    httpOptions:
+      verify: false
+    tlsCACerts:
+      path: organizations/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+    registrar:
+      - enrollId: admin
+        enrollSecret: adminpw
+
+  ca.org2.example.com:
+    url: https://34.78.248.112:8054
+    httpOptions:
+      verify: false
+    tlsCACerts:
+      path: organizations/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
+    registrar:
+      - enrollId: admin
+        enrollSecret: adminpw
+  
+  ca.org3.example.com:
+    url: https://34.88.30.96:10054
+    httpOptions:
+      verify: false
+    tlsCACerts:
+      path: organizations/peerOrganizations/org3.example.com/tlsca/tlsca.org3.example.com-cert.pem
+    registrar:
+      - enrollId: admin
+        enrollSecret: adminpw
