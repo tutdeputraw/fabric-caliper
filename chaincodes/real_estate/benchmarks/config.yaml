@@ -4,8 +4,69 @@ test:
     type: local
     number: 1
   rounds:
-    - label: Create Real Estate
-      txNumber: 1000
+    - label: Query Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]
+      description: Test description for the query performance of the deployed contract.
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 5
+      workload:
+        module: chaincodes/real_estate/functions/queryRealEstate.js
+    - label: Query Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]
+      description: Test description for the query performance of the deployed contract.
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: chaincodes/real_estate/functions/queryRealEstate.js
+    - label: Query Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]
+      description: Test description for the query performance of the deployed contract.
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: chaincodes/real_estate/functions/queryRealEstate.js
+    - label: Query Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]
+      description: Test description for the query performance of the deployed contract.
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: chaincodes/real_estate/functions/queryRealEstate.js
+    
+    - label: Create Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 5
+      workload:
+        module: chaincodes/real_estate/functions/createRealEstate.js
+    - label: Create Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: chaincodes/real_estate/functions/createRealEstate.js
+    - label: Create Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: chaincodes/real_estate/functions/createRealEstate.js
+    - label: Create Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]
+      txNumber: 100
       rateControl:
         type: fixed-rate
         opts:

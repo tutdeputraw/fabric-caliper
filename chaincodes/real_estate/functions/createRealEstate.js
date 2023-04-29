@@ -48,7 +48,7 @@ class CreateRealEstateWorkload extends WorkloadModuleBase {
 
         const args = {
             contractId: 'real_estate',
-            contractVersion: 'v2',
+            contractVersion: 'v1',
             contractFunction: 'RealEstate_RegisterNewRealEstate',
             contractArguments: [realEstateId, ownerId, price, bed, bath, acreLot, fullAddress, street, city, state, zipcode, houseSize, isOpenToSell],
             timeout: 30

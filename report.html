@@ -128,13 +128,20 @@
                 <li>DLT: &nbsp<span style="font-weight: 500;">fabric</span></li>
                 <li>Name: &nbsp<span style="font-weight: 500;"></span></li>
                 <li>Description: &nbsp<span style="font-weight: 500;"></span></li>
-                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">1</span></li>
+                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">8</span></li>
                 <li><a href="#benchmarkInfo">Details</a></li>
             </ul>
             <ul>
                 <h3>&nbspBenchmark results</h3>
                 <li><a href="#benchmarksummary">Summary</a></li>
-                    <li><a href="#Create Real Estate">Create Real Estate</a></li>
+                    <li><a href="#Query Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]">Query Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</a></li>
+                    <li><a href="#Query Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]">Query Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</a></li>
+                    <li><a href="#Query Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]">Query Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</a></li>
+                    <li><a href="#Query Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]">Query Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</a></li>
+                    <li><a href="#Create Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]">Create Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</a></li>
+                    <li><a href="#Create Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]">Create Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</a></li>
+                    <li><a href="#Create Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]">Create Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</a></li>
+                    <li><a href="#Create Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]">Create Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</a></li>
             </ul>
             <ul>
                 <h3>&nbspSystem under test</h3>
@@ -157,28 +164,189 @@
                     </tr>
 
                     <tr>
-                         <td>Create Real Estate</td> <td>984</td> <td>16</td> <td>47.6</td> <td>52.48</td> <td>5.36</td> <td>24.19</td> <td>16.4</td>
+                         <td>Query Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</td> <td>100</td> <td>0</td> <td>5.1</td> <td>0.16</td> <td>0.05</td> <td>0.06</td> <td>5.0</td>
+                    </tr>
+                    <tr>
+                         <td>Query Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</td> <td>100</td> <td>0</td> <td>10.1</td> <td>0.08</td> <td>0.05</td> <td>0.06</td> <td>10.0</td>
+                    </tr>
+                    <tr>
+                         <td>Query Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</td> <td>100</td> <td>0</td> <td>20.2</td> <td>0.12</td> <td>0.05</td> <td>0.06</td> <td>20.0</td>
+                    </tr>
+                    <tr>
+                         <td>Query Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</td> <td>100</td> <td>0</td> <td>50.6</td> <td>0.93</td> <td>0.06</td> <td>0.43</td> <td>42.3</td>
+                    </tr>
+                    <tr>
+                         <td>Create Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</td> <td>100</td> <td>0</td> <td>5.1</td> <td>2.77</td> <td>0.67</td> <td>1.72</td> <td>4.9</td>
+                    </tr>
+                    <tr>
+                         <td>Create Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</td> <td>99</td> <td>1</td> <td>10.1</td> <td>1.99</td> <td>0.70</td> <td>1.33</td> <td>9.4</td>
+                    </tr>
+                    <tr>
+                         <td>Create Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</td> <td>100</td> <td>0</td> <td>20.2</td> <td>6.20</td> <td>1.08</td> <td>2.96</td> <td>13.0</td>
+                    </tr>
+                    <tr>
+                         <td>Create Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</td> <td>100</td> <td>0</td> <td>50.5</td> <td>7.07</td> <td>2.67</td> <td>4.35</td> <td>14.1</td>
                     </tr>
                 </table>
             </div>
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create Real Estate">
-                <h2>Benchmark round: Create Real Estate</h2>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Query Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]">
+                <h2>Benchmark round: Query Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</h2>
+                <p>Test description for the query performance of the deployed contract.</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 5
+</pre>
+                        <h3>Performance metrics for Query Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>Query Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</td> <td>100</td> <td>0</td> <td>5.1</td> <td>0.16</td> <td>0.05</td> <td>0.06</td> <td>5.0</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for Query Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Query Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]">
+                <h2>Benchmark round: Query Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</h2>
+                <p>Test description for the query performance of the deployed contract.</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 10
+</pre>
+                        <h3>Performance metrics for Query Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>Query Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</td> <td>100</td> <td>0</td> <td>10.1</td> <td>0.08</td> <td>0.05</td> <td>0.06</td> <td>10.0</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for Query Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Query Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]">
+                <h2>Benchmark round: Query Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</h2>
+                <p>Test description for the query performance of the deployed contract.</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 20
+</pre>
+                        <h3>Performance metrics for Query Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>Query Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</td> <td>100</td> <td>0</td> <td>20.2</td> <td>0.12</td> <td>0.05</td> <td>0.06</td> <td>20.0</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for Query Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Query Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]">
+                <h2>Benchmark round: Query Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</h2>
+                <p>Test description for the query performance of the deployed contract.</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 50
+</pre>
+                        <h3>Performance metrics for Query Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>Query Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</td> <td>100</td> <td>0</td> <td>50.6</td> <td>0.93</td> <td>0.06</td> <td>0.43</td> <td>42.3</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for Query Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]">
+                <h2>Benchmark round: Create Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</h2>
+                <p></p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 5
+</pre>
+                        <h3>Performance metrics for Create Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>Create Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</td> <td>100</td> <td>0</td> <td>5.1</td> <td>2.77</td> <td>0.67</td> <td>1.72</td> <td>4.9</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for Create Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20 seconds]</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]">
+                <h2>Benchmark round: Create Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</h2>
+                <p></p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 10
+</pre>
+                        <h3>Performance metrics for Create Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>Create Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</td> <td>99</td> <td>1</td> <td>10.1</td> <td>1.99</td> <td>0.70</td> <td>1.33</td> <td>9.4</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for Create Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in 10 seconds]</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]">
+                <h2>Benchmark round: Create Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</h2>
+                <p></p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 20
+</pre>
+                        <h3>Performance metrics for Create Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>Create Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</td> <td>100</td> <td>0</td> <td>20.2</td> <td>6.20</td> <td>1.08</td> <td>2.96</td> <td>13.0</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for Create Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5 seconds]</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]">
+                <h2>Benchmark round: Create Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</h2>
                 <p></p>
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
   type: fixed-rate
   opts:
     tps: 50
 </pre>
-                        <h3>Performance metrics for Create Real Estate</h3>
+                        <h3>Performance metrics for Create Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>Create Real Estate</td> <td>984</td> <td>16</td> <td>47.6</td> <td>52.48</td> <td>5.36</td> <td>24.19</td> <td>16.4</td>
+                                     <td>Create Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</td> <td>100</td> <td>0</td> <td>50.5</td> <td>7.07</td> <td>2.67</td> <td>4.35</td> <td>14.1</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for Create Real Estate</h3>
+                        <h3>Resource utilization for Create Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]</h3>
             </div>
 
             <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;">
@@ -188,8 +356,84 @@
   type: local
   number: 1
 rounds:
-  - label: Create Real Estate
-    txNumber: 1000
+  - label: &gt;-
+      Query Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in 20
+      seconds]
+    description: Test description for the query performance of the deployed contract.
+    txNumber: 100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 5
+    workload:
+      module: chaincodes&#x2F;real_estate&#x2F;functions&#x2F;queryRealEstate.js
+  - label: &gt;-
+      Query Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in
+      10 seconds]
+    description: Test description for the query performance of the deployed contract.
+    txNumber: 100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: chaincodes&#x2F;real_estate&#x2F;functions&#x2F;queryRealEstate.js
+  - label: &gt;-
+      Query Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in 5
+      seconds]
+    description: Test description for the query performance of the deployed contract.
+    txNumber: 100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 20
+    workload:
+      module: chaincodes&#x2F;real_estate&#x2F;functions&#x2F;queryRealEstate.js
+  - label: &gt;-
+      Query Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2
+      seconds]
+    description: Test description for the query performance of the deployed contract.
+    txNumber: 100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 50
+    workload:
+      module: chaincodes&#x2F;real_estate&#x2F;functions&#x2F;queryRealEstate.js
+  - label: &gt;-
+      Create Real Estate [fixed-rate][txNumber 100, tps 5][100 transactions in
+      20 seconds]
+    txNumber: 100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 5
+    workload:
+      module: chaincodes&#x2F;real_estate&#x2F;functions&#x2F;createRealEstate.js
+  - label: &gt;-
+      Create Real Estate [fixed-rate][txNumber 100, tps 10][100 transactions in
+      10 seconds]
+    txNumber: 100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: chaincodes&#x2F;real_estate&#x2F;functions&#x2F;createRealEstate.js
+  - label: &gt;-
+      Create Real Estate [fixed-rate][txNumber 100, tps 20][100 transactions in
+      5 seconds]
+    txNumber: 100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 20
+    workload:
+      module: chaincodes&#x2F;real_estate&#x2F;functions&#x2F;createRealEstate.js
+  - label: &gt;-
+      Create Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in
+      2 seconds]
+    txNumber: 100
     rateControl:
       type: fixed-rate
       opts:
