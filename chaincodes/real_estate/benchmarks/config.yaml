@@ -73,3 +73,12 @@ test:
           tps: 50
       workload:
         module: chaincodes/real_estate/functions/createRealEstate.js
+    # delete these lines below later
+    # - label: Create Real Estate [fixed-rate][txNumber 100, tps 50][100 transactions in 2 seconds]
+    #   txNumber: 8000
+    #   rateControl:
+    #     type: fixed-rate
+    #     opts:
+    #       tps: 50
+    #   workload:
+    #     module: chaincodes/real_estate/functions/createRealEstate.js
